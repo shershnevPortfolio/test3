@@ -2,4 +2,21 @@ extends /layout/app
 
 block content
   .container
-    | CONTENT
+    section.section.task-list
+      h2.section__header  Мои задачи
+      .task
+        .task__info Риск культура — Сформировать мотивацию к дальнейшему развитию
+        .task__selects
+            select(name="task-status")
+              option(value="") В работе
+              option(value="") В работе
+              option(value="") В работе
+            select(name="task-")
+              option(value="") В работе
+              option(value="") В работе
+              option(value="") В работе
+            select(name="task-status")
+              option(value="") В работе
+              option(value="") В работе
+              option(value="") В работе
+
