@@ -2,24 +2,27 @@
   display: flex
   align-items: center
   padding: 28px 80px
-  justify-content: space-betweennav
+  justify-content: space-between
   background-color: #ffffff
 
-  .logo
+.header__dropdown
+  left: 80px
+  top: 88px
+  z-index: 1
+  width: 349px
+  height: 325px
+
+.header__logo
     margin-right: 60px
 
 
 .dropdown
   position: absolute
-  display: none
   overflow-y: scroll
-  width: 349px
-  height: 325px
+  display: none
   padding: 31px 25px
   background: #FFFFFF
   border: 1px solid #CDD3DB
-  left: 80px
-  top: 88px
   border-radius: 5px
 
 
@@ -32,6 +35,13 @@
 .user
   display: flex
   align-items: center
+  position: relative
+
+.user__dropdown
+  right: 0
+  top: 70px
+  width: 200px
+  height: 180px
 
 .user__avatar
   border-radius: 100%

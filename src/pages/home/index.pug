@@ -7,27 +7,51 @@ block content
         .section__inner
           .section__content
             .task
-              .task__info Риск культура — Сформировать мотивацию к дальнейшему развитию
-              .task__selects
-                  select(name="task-status").select
-                    option(value="" data-color="#D9F5E6" style="background-color: #D9F5E6; color: red;") В работе
-                    option(value="" style="background-color: rgb(244, 67, 54);") Нужна проверка
-                    option(value="" style="background-color: rgb(0, 121, 107);" ) Сделана
-                  select(name="task-").select
-                    option(value="") В работе
-                    option(value="") В работе
-                    option(value="") В работе
-                  select(name="task-status").select
-                    option(value="") В работе
-                    option(value="") В работе
-                    option(value="") В работе
+              .task__content
+                .task__info
+                  a(href="/").task__project Риск культура
+                  span  — Сформировать мотивацию к дальнейшему развитию
+                .task__selects-list
+                    .task__select
+                      .task__select-icon
+                        img(src="../../images/rocket.svg", alt="")
+                      select(name="task-status").select
+                        option(value="" data-color="#D9F5E6" style="background-color: #D9F5E6") В работе
+                        option(value="" data-color="rgb(244, 67, 54)" style="background-color: rgb(244, 67, 54);") Нужна проверка
+                        option(value="" data-color="rgb(0, 121, 107)" style="background-color: rgb(0, 121, 107);" ) Сделана
+                    .task__select
+                      .task__select-icon
+                          img(src="../../images/human.svg", alt="")
+                      select(name="task-").select
+                        option(value="") В работе
+                        option(value="") В работе
+                        option(value="") В работе
+                    .task__select
+                      .task__select-icon
+                          img(src="../../images/fire.svg", alt="")
+                      select(name="task-").select
+                        option(value="" data-color="#F9E6D9" style="background-color: #F9E6D9") Максимум
+                        option(value="" data-color="rgb(255, 224, 130)" style="background-color: rgb(255, 224, 130)") Средний
+                        option(value="" data-color="rgb(0, 121, 107)" style="background-color: rgb(0, 121, 107);" ) Сделана
+              aside.task__aside
+                span.task__timestamp 06.05.2020
+                .task__additional-info
+                  .task__messages
+                    span 0
+                    .task__messages-icon
+                      img(src="../../images/message.svg", alt="")
+                  .task__messages
+                    span 0
+                    .task__messages-icon
+                      img(src="../../images/message.svg", alt="")
+
             button.btn Загрузить еще
           aside.section__aside
             .filter
               .filter__item
                 | Сортировать по :
                 span.filter__span дате
-                .sort
+                .filter__order
                   img(src="../../images/sort.svg", alt="")
               .filter__selects
                   select(name="task-status")
@@ -61,7 +85,7 @@ block content
             h3.video__header Команда и управление людьми
           article.video
             .video__item
-              img(src="../../images/video.jpg", alt="").video__img
+              img(src="../../images/video-1.jpg", alt="").video__img
               .video__test
                 .video__play
                   img(src="../../images/play.svg", alt="")
@@ -69,7 +93,7 @@ block content
             h3.video__header Мотивирование подчиненных и коллег к участию в улучшениях
           article.video
             .video__item
-              img(src="../../images/video.jpg", alt="").video__img
+              img(src="../../images/video-2.jpg", alt="").video__img
               .video__test
                 .video__play
                   img(src="../../images/play.svg", alt="")
@@ -77,7 +101,7 @@ block content
             h3.video__header  Навык постоянного личностного развития
           article.video
             .video__item
-              img(src="../../images/video.jpg", alt="").video__img
+              img(src="../../images/video-3.jpg", alt="").video__img
               .video__test
                 .video__play
                   img(src="../../images/play.svg", alt="")
@@ -85,7 +109,7 @@ block content
             h3.video__header Принятие на себя лидерства
           article.video
             .video__item
-              img(src="../../images/video.jpg", alt="").video__img
+              img(src="../../images/video-4.jpg", alt="").video__img
               .video__test
                 .video__play
                   img(src="../../images/play.svg", alt="")
@@ -93,7 +117,7 @@ block content
             h3.video__header Личная эффективность
           article.video
             .video__item
-              img(src="../../images/video.jpg", alt="").video__img
+              img(src="../../images/video-5.jpg", alt="").video__img
               .video__test
                 .video__play
                   img(src="../../images/play.svg", alt="")
@@ -101,4 +125,9 @@ block content
             h3.video__header Факторы влияющие на вовлеченность в коллективе
 
 
-
+    section.section
+      h2.section__header Оставьте отзыв о вашем использовании!
+      .section__content
+        form(action="")
+          textarea(name="")
+          input(type="file")

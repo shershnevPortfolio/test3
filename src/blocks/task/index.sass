@@ -1,14 +1,50 @@
 .task
   padding: 22px 30px
   background: #ffffff
+  display: flex
+  justify-content: space-between
+
+.task__aside
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+
+
+.task__messages
+  display: flex
+
+.task__additional-info
+    display: flex
+    justify-content: space-between
 
 .task__info
   margin-bottom: 12px
 
-.task__selects
+.task__selects-list
+  display: flex
+
+.task__select
+    position: relative
     select
         width: 225px
         height: 33px
         border: none
         border-radius: 2px
+        padding-left: 46px
 
+    &:not(:last-child)
+      margin-right: 10px
+
+.task__select-icon
+  position: absolute
+  left: 20px
+  top: 50%
+  transform: translateY(-50%)
+
+.task__project
+  font-family: 'Montserrat'
+  color: black
+  font-style: normal
+  font-weight: bold
+  font-size: 15px
+  line-height: 18px

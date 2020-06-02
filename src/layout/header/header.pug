@@ -1,12 +1,12 @@
 header.header
-    a(href="/").logo
+    a(href="/").logo.header__logo
       img(src="../../images/logo.svg", alt="").logo__image
       span.logo__text Rtrack
     nav.nav
       ul.nav__inner
         li.nav__item.nav__item--with-arrow
          a(href="/").nav__link Проекты
-         .dropdown
+         .dropdown.header__dropdown
           .dropdown__item
             .project
               a(href="/").project__name RS digital
@@ -28,4 +28,13 @@ header.header
         img(src="../../images/star.svg", alt="")
       .user__avatar
           img(src="../../images/user.png", alt="")
+      .dropdown.user__dropdown
+        .dropdown__item
+          a(href="/") Профиль
+        .dropdown__item
+          a(href="/") Статистика
+        .dropdown__item
+          a(href="/") Токены
+        .dropdown__item
+          a(href="/") API
 
