@@ -3,16 +3,23 @@
   flex-wrap: wrap
 
 .video
-  width: calc( 100%/3 - 8px)
+  width: calc( 100%/3 - 13px)
   border: 1px solid #050505
+  border-radius: 4px
 
 .video__content
   display: flex
   justify-content: space-between
   flex-wrap: wrap
 
+  .video
+    margin-bottom: 20px
+
 .video__item
   position: relative
+
+.video__img
+  width: 100%
 
 .video__test
   display: flex
@@ -23,7 +30,7 @@
   position: absolute
   top: 0
 
-.video__time
+.video__duration
   position: absolute
   padding: 6px
   color: #ffffff
@@ -33,12 +40,11 @@
   left: 10px
 
 .video__header
-  background: #ffffff
   font-family: 'Montserrat'
   font-style: normal
   font-weight: bold
   font-size: 14px
-  line-height: 21px
+  padding: 15px
   color: #212121
 
 .video__play

@@ -6,6 +6,13 @@ header.header
       ul.nav__inner
         li.nav__item.nav__item--with-arrow
          a(href="/").nav__link Проекты
+         .dropdown
+          .dropdown__item
+            .project
+              a(href="/").project__name RS digital
+              .project__tasks
+                a(href="/").project__task.project__task--assigned 4
+                a(href="/").project__task 5
         li.nav__item
           a(href="/").nav__link Задачи для меня
         li.nav__item
@@ -14,3 +21,11 @@ header.header
           a(href="/").nav__link Все задачи
         li.nav__item
           a(href="/").nav__link Просмотренные
+    .user
+      .user__notifications
+        img(src="../../images/bell.svg", alt="")
+      .user__favorites
+        img(src="../../images/star.svg", alt="")
+      .user__avatar
+          img(src="../../images/user.png", alt="")
+

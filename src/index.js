@@ -13,6 +13,9 @@ import initBlocks from './blocks';
 import initPages from './pages';
 
 $(() => {
+  $('.select').on('change', function(){
+    $(this).css({background: $(this).find('option:selected').data('color')});
+  });
   initLayout();
   initBlocks();
   initPages();

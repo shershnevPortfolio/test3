@@ -1,5 +1,5 @@
 .nav
-
+  flex-grow: 1
 .nav__inner
   display: flex
 
@@ -7,12 +7,15 @@
   display: flex
   align-items: center
 
+  &:hover
+    .dropdown
+      display: block
+
   &:not(:last-child)
     margin-right: 30px
 
 
 .nav__link
-    text-decoration: none
     color: #212121
     font-family: 'Montserrat'
     font-style: normal
