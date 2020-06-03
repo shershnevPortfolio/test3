@@ -59,9 +59,17 @@
   background: #ffffff
 
 
-.from__item
+.form__item
   display: flex
   justify-content: space-between
+
+  @media screen and ( max-width: 571px  )
+    flex-direction: column
+    .file-label
+      &:not(:last-child)
+        margin-bottom: 20px
+
+
 
 
   .btn
@@ -154,6 +162,22 @@
 
     .video__item
       margin: 0
+
+.review
+  div
+    max-width: unset
+
+  .section__header
+    font-size: 33px
+
+  .file-label
+    img
+      width: unset
+
+    .file-label__button
+      margin-bottom: 0
+      border-radius: 50%
+
 
 .info-container__aside
     max-width: 400px
