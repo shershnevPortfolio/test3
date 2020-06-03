@@ -75,8 +75,9 @@
   display: flex
 
 .info-container__content
+  width: 100%
   section
-    padding: 40px 80px
+    padding: 40px 0px
 
     &:first-child
         padding-top: 0
@@ -92,6 +93,7 @@
   div
     border-radius: 5px
     overflow: hidden
+    max-width: 800px
     &:not(:last-child)
       margin-bottom: 36px
 
@@ -132,13 +134,21 @@
     font-size: 24px
     color: #74777D
 
-  article
-    &:not(:last-child)
-      margin-bottom: 40px
-    p
-      margin-bottom: 36px
-
 .info-container__aside
     max-width: 400px
     width: 100%
     padding-left: 50px
+
+    .nav__inner
+      flex-direction: column
+
+    .nav__item
+      margin: 0
+
+    .nav__item--active
+      background: #ffffff
+
+    .nav__link
+      padding: 18px 30px
+      width: 100%
+      border-bottom: 1px solid black
