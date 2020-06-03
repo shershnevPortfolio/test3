@@ -22,19 +22,21 @@ header.header
         li.nav__item
           a(href="/").nav__link Просмотренные
     .user
-      .user__notifications
-        img(src="../../images/bell.svg", alt="")
-      .user__favorites
-        img(src="../../images/star.svg", alt="")
+      .user__buttons
+        .user__button
+          img(src="../../images/bell.svg", alt="")
+        .user__button
+          img(src="../../images/star.svg", alt="")
       .user__avatar
           img(src="../../images/user.png", alt="")
-      .dropdown.user__dropdown
-        .dropdown__item
-          a(href="/") Профиль
-        .dropdown__item
-          a(href="/") Статистика
-        .dropdown__item
-          a(href="/") Токены
-        .dropdown__item
-          a(href="/") API
+          .dropdown.user__dropdown
+            .dropdown__item
+              a(href="/").user__link Профиль
+            .dropdown__item
+              a(href="/").user__link Статистика
+            .dropdown__item
+              a(href="/").user__link Токены
+            .dropdown__item
+              a(href="/").user__link API
+
 

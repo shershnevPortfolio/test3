@@ -1,0 +1,37 @@
+
+.user
+  display: flex
+  align-items: center
+  position: relative
+
+.user__dropdown
+  right: 0
+  top: 70px
+  width: 200px
+  height: 180px
+
+.user__avatar
+  border-radius: 100%
+  overflow: hidden
+  display: flex
+  align-items: center
+
+  &:hover
+    .user__dropdown
+      display: block
+
+.user__buttons
+  display: flex
+  margin-right: 30px
+
+  .user__button
+    &:not(:last-child)
+      margin-right: 20px
+
+.user__link
+  font-family: 'Montserrat'
+  font-style: normal
+  font-weight: normal
+  font-size: 14px
+  line-height: 17px
+  color: #212121

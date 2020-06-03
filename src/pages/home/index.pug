@@ -128,6 +128,14 @@ block content
     section.section
       h2.section__header Оставьте отзыв о вашем использовании!
       .section__content
-        form(action="")
-          textarea(name="")
-          input(type="file")
+        form(action="").from
+          textarea(name="" placeholder='Напишите ваш отзыв...' rows="5").form__textarea
+          .from__item
+            label(for="upload-file").file-label
+              .file-label__button
+                img(src="../../images/staple.svg", alt="")
+              .file-label__text
+                span.file-label__title Прикрепить файлы
+                span.file-label__requires Jpg, png, gif, mp4 не более 15 Мб
+            input( type="file" id='upload-file').file-upload
+            button.btn.btn--color Отправить отзыв

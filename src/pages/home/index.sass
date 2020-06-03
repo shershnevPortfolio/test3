@@ -1,2 +1,72 @@
-input[type="file"]
-  color: red
+.file-upload
+  visibility: hidden
+  position: absolute
+  z-index: -10
+
+.file-label
+  display: flex
+  align-items: center
+  cursor: pointer
+  width: fit-content
+
+.form__textarea
+  background: #FFFFFF
+  border: 1px solid #CDD3DB
+  box-sizing: border-box
+  border-radius: 5px
+  width: 100%
+  padding: 18px 25px
+  font-family: 'Montserrat'
+  font-style: normal
+  font-weight: normal
+  font-size: 17px
+  line-height: 29px
+  color: #000000
+
+  &:not(:last-child)
+    margin-bottom: 36px
+
+
+
+.file-label__text
+  display: flex
+  flex-direction: column
+
+.file-label__requires
+  font-family: 'Montserrat'
+  font-style: normal
+  font-weight: normal
+  font-size: 13px
+  line-height: 15px
+  color: rgba(0, 0, 0, .5)
+
+.file-label__title
+  font-family: 'Montserrat'
+  font-style: normal
+  font-weight: 500
+  font-size: 15px
+  color: #212121
+
+
+.file-label__button
+  display: flex
+  justify-content: center
+  align-items: center
+  width: 46px
+  border-radius: 50%
+  margin-right: 15px
+  height: 46px
+  background: #ffffff
+
+
+.from__item
+  display: flex
+  justify-content: space-between
+
+
+  .btn
+    flex-grow: 1
+    background: #0066FF
+    border: none
+    max-width: 204px
+    color: #FFFFFF
