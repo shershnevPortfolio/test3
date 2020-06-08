@@ -13,13 +13,38 @@
       display: none
 
 .header__dropdown
+  display: none
   left: 80px
   top: 88px
   z-index: 1
   width: 349px
   height: 325px
   position: absolute
-  overflow-y: scroll
+  padding: 30px 5px
+  border: 1px solid #CDD3DB
+  background: #ffffff
+  border-radius: 5px
+
+  &::before
+    content: ''
+    display: block
+    width: 10px
+    height: 10px
+    position: absolute
+    top: 0
+    transform: translateY(-100%)
+    right: 105px
+    background: url('./dropdown-triangle.png')
+
+.header__block
+  position: absolute
+  width: 100%
+  z-index: 999
+  height: 76px
+  bottom: 0
+  left: 0
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%)
+  border-radius: 5px
 
 .header__logo
     margin-right: 60px
