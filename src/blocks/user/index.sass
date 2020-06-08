@@ -3,6 +3,16 @@
   display: flex
   align-items: center
   position: relative
+  cursor: pointer
+
+  &::after
+    content: ''
+    margin-left: 8px
+    display: inline-block
+    width: 10px
+    height: 6px
+    background: url('./arrow.svg')
+
 
 .user__dropdown
   border-radius: 5px
@@ -39,31 +49,6 @@
   &:hover
     .user__dropdown
       display: block
-
-.user__buttons
-  display: flex
-  margin-right: 30px
-
-  @media screen and ( max-width: 425px  )
-      margin-right: 10px
-
-
-  .user__button
-    svg
-      width: 25px
-    path
-      fill: none
-      stroke: #000000
-
-    &:not(:last-child)
-      margin-right: 20px
-
-    &:hover
-      opacity: .8
-
-      @media screen and ( max-width: 425px )
-        margin-right: 10px
-
 
 
 .user__link
