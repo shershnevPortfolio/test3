@@ -8,6 +8,7 @@ import './video';
 import './project';
 import './user';
 import './dropdown';
+import './star';
 
 export default () => {
   console.log('init blocks');

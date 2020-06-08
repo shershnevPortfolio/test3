@@ -16,10 +16,14 @@
   opacity: 0.5
 
 .project__task
-  padding: 4px 13px
+  padding: 1px 13px
   border: 1px solid #CDD3DB
   border-radius: 5px
   color: #93979B
+  width: 35px
+  display: flex
+  align-items: center
+  justify-content: center
 
   &:not(:last-child)
     margin-right: 5px
@@ -31,6 +35,16 @@
 
 .project__favorite
   margin-right: 10px
+  
+  path
+    fill: none
+    stroke: #212121
+
+.project__favorite--active
+   path
+    fill: #FFB661
+    stroke: transparent
+  
 
 .project__item
   display: flex

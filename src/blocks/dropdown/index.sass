@@ -1,16 +1,25 @@
-.dropdown
-  position: absolute
-  overflow-y: scroll
-  display: none
+.dropdown 
+  // display: none
   padding: 31px 25px
   background: #FFFFFF
   border: 1px solid #CDD3DB
   border-radius: 5px
 
+  &::-webkit-scrollbar
+    border-radius: 5px
+    width: 4px
+    padding-top: 10px
+
+  &::-webkit-scrollbar-thumb
+    background: #93979B
+    border-radius: 5px
+    
+
+
 
 .dropdown__item
   &:not(:last-child)
-    margin-bottom: 10px
+    margin-bottom: 15px
 
 
 
