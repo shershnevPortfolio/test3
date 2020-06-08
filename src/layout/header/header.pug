@@ -6,85 +6,86 @@ header.header
       ul.nav__inner
         li.nav__item.nav__item--with-arrow
          a(href="/").nav__link Проекты
-         .header__dropdown
-          .header__block
-          .dropdown
-            .dropdown__item
-              .project
-                .project__item
-                  .project__favorite.project__favorite--active
-                    include ../../blocks/star/index
-                  a(href="/").project__name RS digital
-                .project__tasks
-                  a(href="/").project__task.project__task--assigned 4
-                  a(href="/").project__task 5
-            .dropdown__item
-              .project
-                .project__item
-                  .project__favorite.project__favorite--active
-                    include ../../blocks/star/index
-                  a(href="/").project__name Rocketware
-                .project__tasks
-                  a(href="/").project__task.project__task--assigned 4
-                  a(href="/").project__task 12
-            .dropdown__item
-              .project
-                .project__item
-                  .project__favorite.project__favorite--active
-                    include ../../blocks/star/index
-                  a(href="/").project__name Самообразование
-                .project__tasks
-                  a(href="/").project__task 12
-            .dropdown__item
-              .project
-                .project__item
-                  .project__favorite
-                    include ../../blocks/star/index
-                  a(href="/").project__name Mecto.ru
-                .project__tasks
-                  a(href="/").project__task 45
-            .dropdown__item
-              .project
-                .project__item
-                  .project__favorite
-                    include ../../blocks/star/index
-                  a(href="/").project__name Travel-promo
-                .project__tasks
-                  a(href="/").project__task.project__task--assigned 22
-                  a(href="/").project__task 8
-            .dropdown__item
-              .project
-                .project__item
-                  .project__favorite
-                    include ../../blocks/star/index
-                  a(href="/").project__name B2B оружие
-                .project__tasks
-                  a(href="/").project__task.project__task--assigned 9
-                  a(href="/").project__task 30
-            .dropdown__item
-              .project
-                .project__item
-                  .project__favorite
-                    include ../../blocks/star/index
-                  a(href="/").project__name Кинотеатр "Москва"
-                .project__tasks
-                  a(href="/").project__task 54
-            .dropdown__item
-              .project
-                .project__item
-                  .project__favorite
-                    include ../../blocks/star/index
-                  a(href="/").project__name Кинотеатр "Москва"
-                .project__tasks
-                  a(href="/").project__task 54
-            .dropdown__item
-              .project
-                .project__item
-                  .project__favorite
-                    include ../../blocks/star/index
-                  a(href="/").project__name Кинотеатр "Москва"
-                .project__tasks
-                  a(href="/").project__task 54
+         .header__hover
+          .header__dropdown
+              .header__block
+              .dropdown
+                .dropdown__item
+                  .project
+                    .project__item
+                      .project__favorite.project__favorite--active
+                        include ../../blocks/star/index
+                      a(href="/").project__name RS digital
+                    .project__tasks
+                      a(href="/").project__task.project__task--assigned 4
+                      a(href="/").project__task 5
+                .dropdown__item
+                  .project
+                    .project__item
+                      .project__favorite.project__favorite--active
+                        include ../../blocks/star/index
+                      a(href="/").project__name Rocketware
+                    .project__tasks
+                      a(href="/").project__task.project__task--assigned 4
+                      a(href="/").project__task 12
+                .dropdown__item
+                  .project
+                    .project__item
+                      .project__favorite.project__favorite--active
+                        include ../../blocks/star/index
+                      a(href="/").project__name Самообразование
+                    .project__tasks
+                      a(href="/").project__task 12
+                .dropdown__item
+                  .project
+                    .project__item
+                      .project__favorite
+                        include ../../blocks/star/index
+                      a(href="/").project__name Mecto.ru
+                    .project__tasks
+                      a(href="/").project__task 45
+                .dropdown__item
+                  .project
+                    .project__item
+                      .project__favorite
+                        include ../../blocks/star/index
+                      a(href="/").project__name Travel-promo
+                    .project__tasks
+                      a(href="/").project__task.project__task--assigned 22
+                      a(href="/").project__task 8
+                .dropdown__item
+                  .project
+                    .project__item
+                      .project__favorite
+                        include ../../blocks/star/index
+                      a(href="/").project__name B2B оружие
+                    .project__tasks
+                      a(href="/").project__task.project__task--assigned 9
+                      a(href="/").project__task 30
+                .dropdown__item
+                  .project
+                    .project__item
+                      .project__favorite
+                        include ../../blocks/star/index
+                      a(href="/").project__name Кинотеатр "Москва"
+                    .project__tasks
+                      a(href="/").project__task 54
+                .dropdown__item
+                  .project
+                    .project__item
+                      .project__favorite
+                        include ../../blocks/star/index
+                      a(href="/").project__name Кинотеатр "Москва"
+                    .project__tasks
+                      a(href="/").project__task 54
+                .dropdown__item
+                  .project
+                    .project__item
+                      .project__favorite
+                        include ../../blocks/star/index
+                      a(href="/").project__name Кинотеатр "Москва"
+                    .project__tasks
+                      a(href="/").project__task 54
         li.nav__item
           a(href="/").nav__link Задачи для меня
         li.nav__item
@@ -101,14 +102,18 @@ header.header
           img(src="../../images/star.svg", alt="")
       .user__avatar
           img(src="../../images/user.png", alt="")
-          .dropdown.user__dropdown
-            .dropdown__item
-              a(href="/").user__link Профиль
-            .dropdown__item
-              a(href="/").user__link Статистика
-            .dropdown__item
-              a(href="/").user__link Токены
-            .dropdown__item
-              a(href="/").user__link API
+          .user__hover
+            .user__dropdown
+              .dropdown
+                .dropdown__item
+                  a(href="/").user__link Профиль
+                .dropdown__item
+                  a(href="/").user__link Статистика
+                .dropdown__item
+                  a(href="/").user__link Токены
+                .dropdown__item
+                  a(href="/").user__link API
+                .dropdown__item.dropdown__item--quit
+                  a(href="/").user__link Выйти
 
 

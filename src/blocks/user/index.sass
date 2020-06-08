@@ -5,11 +5,20 @@
   position: relative
 
 .user__dropdown
-  right: 0
-  top: 70px
+  border-radius: 5px
+  border: 1px solid #CDD3DB
+  background: #ffffff
+  padding: 18px 0px
   display: none
   width: 200px
-  height: 180px
+  z-index: 10
+
+
+.user__hover
+  position: absolute
+  padding-top: 30px
+  right: 0
+  top: 40px
   z-index: 10
 
 .user__avatar
@@ -20,7 +29,7 @@
 
   &:hover
     .user__dropdown
-      // display: block
+      display: block
 
 .user__buttons
   display: flex
