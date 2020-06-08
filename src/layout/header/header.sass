@@ -23,16 +23,27 @@
   background: #ffffff
   border-radius: 5px
 
-  &::before
+
+  &::before, &::after
     content: ''
     display: block
-    width: 10px
-    height: 10px
     position: absolute
-    top: 0
-    transform: translateY(-100%)
+    width: 30px
+    top: 40px
     right: 105px
-    background: url('./dropdown-triangle.png')
+
+  &::before
+      background: #fff
+      width: 24px
+      height: 2px
+
+  &::after
+    height: 20px
+    top: 35px
+    right: 99px
+    z-index: -1
+    transform: rotate(45deg)
+    border: 1px solid #CDD3DB
 
 .header__hover
   padding-top: 40px

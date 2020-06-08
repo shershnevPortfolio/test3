@@ -11,6 +11,9 @@
     .header__dropdown
       display: block
 
+    &::after
+      transform: rotate(180deg)
+
   &:not(:last-child)
     margin-right: 30px
 
@@ -27,6 +30,7 @@
 .nav__item--with-arrow
     &::after
       content: ''
+      transition: transform 1s
       margin-left: 8px
       display: inline-block
       width: 10px
