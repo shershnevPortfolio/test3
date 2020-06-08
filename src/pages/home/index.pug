@@ -374,12 +374,23 @@ block content
           aside.section__aside
             .filter
               .filter__item
-                | Сортировать по :
-                span.filter__span дате
+                .filter__info
+                  span.filter__title Сортировать по :
+                  span.filter__property дате
                 .filter__order
                   img(src="../../images/sort.svg", alt="")
               .filter__selects
                   select(name="task-status")
+                    option(value="") В работе
+                    option(value="") В работе
+                    option(value="") В работе
+
+                  select(name="task-status")
+                    option(value="") В работе
+                    option(value="") В работе
+                    option(value="") В работе
+                  select(name="task-status")
+
                     option(value="") В работе
                     option(value="") В работе
                     option(value="") В работе
