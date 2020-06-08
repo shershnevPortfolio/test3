@@ -106,7 +106,7 @@
   div
     border-radius: 5px
     overflow: hidden
-    max-width: 800px
+    max-width: 880px
     &:not(:last-child)
       margin-bottom: 36px
 
@@ -147,6 +147,9 @@
   q
     font-size: 24px
     color: #74777D
+    &::after, &::before
+      content: ''
+
 
   .videos
     div
@@ -207,7 +210,6 @@
 
     .nav__item--active
       background: #ffffff
-      font-family: 'Montserrat-Bold'
 
       .nav__link
         font-family: 'Montserrat-Bold'
