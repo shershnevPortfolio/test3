@@ -34,14 +34,31 @@
   @media screen and ( max-width: 768px )
      padding: 0
      max-width: unset !important
+     align-items: center
      flex-direction: row
 
 .task__messages
   display: flex
+  align-items: center
+
+  &:not(:last-child)
+    margin-right: 20px
 
 .task__messages-number
-  margin-right: 8px
+  &:not(:last-child)
+    margin-right: 8px
+    font-family: 'Montserrat'
+    font-style: normal
+    font-weight: normal
+    font-size: 13px
+    line-height: 16px
+    color: #B4B7BB
 
+
+.task__messages-icon
+    path
+      fill: none
+      stroke: #B4B7BB
 .task__additional-info
     display: flex
     justify-content: space-between

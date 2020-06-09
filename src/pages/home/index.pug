@@ -11,7 +11,7 @@ block content
                 .task__content
                   .task__info
                     a(href="/").task__project Риск культура
-                    span  — Сформировать мотивацию к дальнейшему развитию
+                    span.task__description  — Сформировать мотивацию к дальнейшему развитию
                   .task__selects-list
                       .task__select
                         .task__select-icon
@@ -40,10 +40,9 @@ block content
                       .task__messages-icon
                         img(src="../../images/message.svg", alt="")
                     .task__messages
-                      span.task__messages-number 0
+                      span.task__messages-number 2
                       .task__messages-icon
-                        img(src="../../images/message.svg", alt="")
-
+                          include ../../blocks/star/block
             button.btn Загрузить еще
           aside.section__aside
             .filter

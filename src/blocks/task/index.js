@@ -23,7 +23,6 @@ export default () => {
 //
  $selets.each( function(index) {
     const selectedOption =  $(this).find('option:selected');
-    console.log($(this).parent('.task__select').find('.select2-selection--single'));
     const css = {
       color: selectedOption.data('text'),
       background: selectedOption.data('color')
@@ -31,15 +30,7 @@ export default () => {
     $(this).parent('.task__select').find('.select2-selection--single').css({background: css.background});
     $(this).parent('.task__select').find('.select2-selection__rendered').css({color: css.color});
     $(this).parent('.task__select').find('.select2-selection__arrow').append(СreateArrow(css.color));
-    console.log($(this).parent('.task__select'), 'option');
     $(this).parent('.task__select').find('.select2-results__option').css({color: 'red '});
-    // $seletsContainer.find('.select2-selection--single').css({background: $(this).find('option:selected').data('color'), color: $(this).find('option:selected').data('text')});
  });
-
- 
-
-// $('.select').on('change', e => {
-//     console.log(e.target);
-// })
 
 }
