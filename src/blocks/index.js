@@ -10,9 +10,11 @@ import './user';
 import './dropdown';
 import './star';
 import initTask from './task/index'
+import initFilter from './filter/index'
 
 export default () => {
   console.log('init blocks');
   initTask();
+  initFilter();
 
 };
