@@ -9,7 +9,10 @@ import './project';
 import './user';
 import './dropdown';
 import './star';
+import initTask from './task/index'
 
 export default () => {
   console.log('init blocks');
+  initTask();
+
 };

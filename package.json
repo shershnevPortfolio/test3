@@ -49,6 +49,7 @@
     "react-dom": "^16.8.6",
     "sass-loader": "^7.1.0",
     "sass-resources-loader": "^2.0.0",
+    "select2": "^4.0.13",
     "style-loader": "^0.23.1",
     "svg-inline-loader": "^0.8.0",
     "svgo": "^1.2.2",

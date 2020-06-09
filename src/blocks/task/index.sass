@@ -27,7 +27,7 @@
   display: flex
   flex-direction: column
   justify-content: space-between
-  max-width: 120px
+  max-width: 125px
   width: 100%
   padding-left: 30px
 
@@ -38,6 +38,9 @@
 
 .task__messages
   display: flex
+
+.task__messages-number
+  margin-right: 8px
 
 .task__additional-info
     display: flex
@@ -56,15 +59,51 @@
 
 .task__select
     position: relative
-    width: calc( 100%/3 - 10px )
-    select
-        font-family: 'Montserrat'
-        width: 100%
-        height: 33px
+    width: calc( 100%/3 )
+
+    &:not(:last-child)
+      margin-right: 10px
+
+    .select2-container
+      width: 100% !important
+      height: 33px
+
+
+    .select2-selection--single
+        height: 100%
+        display: flex
+        align-items: center
+        background: #D9F5E6
+        padding-left: 40px
         border: none
-        border-radius: 2px
-        padding-left: 46px
-        cursor: pointer
+        // color: #fff
+        // font-size: 1.3em
+        // padding: 4px 12px
+        // font-family: 'Montserrat'
+        // width: 100%
+        // cursor: pointer
+        .select2-selection__rendered
+          color: #32C979
+          font-family: 'Montserrat'
+          font-size: 13px
+
+        .select2-selection__arrow
+          top: 50%
+          width: fit-content
+          right: 10px
+          transition: transform 1s
+          transform: translateY(-50%)
+
+          svg
+            path
+              stroke: none
+          b
+            display: none
+
+    .select2-container--open
+      .select2-selection__arrow
+        transform: rotate(180deg) translateY(50%)
+
 
     @media screen and ( max-width: 768px)
       width: 100%
@@ -77,6 +116,7 @@
   left: 20px
   top: 50%
   transform: translateY(-50%)
+  z-index: 9
 
 .task__project
   font-family: 'Montserrat-Bold'
@@ -89,6 +129,5 @@
 .task__content
   flex-grow: 1
 
-.task__aside
-  width: 100%
-  max-width: 90px
+
+.select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b
