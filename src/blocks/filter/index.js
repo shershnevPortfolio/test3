@@ -18,6 +18,16 @@ export default () => {
 
      },
      {
+       placeholder: 'Статус',
+       closeOnSelect : false,
+       data: [
+         {id: 'in-progress', text: 'В работе'},
+         {id: 'done', text: 'Сделана'},
+         {id: 'need-check', text: 'Нужна проверка'},
+       ]
+
+     },
+     {
        placeholder: 'Приоритет',
        closeOnSelect : false,
        data: [
@@ -29,16 +39,26 @@ export default () => {
       ]
 
       },
-          {
-            placeholder: 'Статус',
-            closeOnSelect : false,
-            data: [
-              {id: 'in-progress', text: 'В работе'},
-              {id: 'done', text: 'Сделана'},
-              {id: 'need-check', text: 'Нужна проверка'},
-            ]
+      {
+        placeholder: 'Автор',
+        closeOnSelect : false,
+        data: [
+          {id: 'in-progress', text: 'В работе'},
+          {id: 'done', text: 'Сделана'},
+          {id: 'need-check', text: 'Нужна проверка'},
+        ]
 
-         },
+      },
+      {
+        placeholder: 'Участие',
+        closeOnSelect : false,
+        data: [
+          {id: 'in-progress', text: 'В работе'},
+          {id: 'done', text: 'Сделана'},
+          {id: 'need-check', text: 'Нужна проверка'},
+        ]
+
+      },
 
   ]
   const $block = $('.filter');

@@ -30,7 +30,27 @@
 
   .select2-container
     width: 100% !important
-    margin-bottom: 10px
+
+    &:not(:last-child)
+      margin-bottom: 10px
+
+  .select2-selection--multiple
+      border: 1px solid #CDD3DB
+
+  .select2-container--focus
+    .select2-selection--multiple
+      border: 1px solid #CDD3DB
+
+
+  .select2-search__field
+    margin-top: 0 !important
+    font-family: 'Montserrat'
+    font-style: normal
+    font-weight: normal
+    font-size: 14px
+    line-height: 18px
+    color: #93979B
+
 
   .select2-selection
       // margin-bottom: 15px
@@ -38,6 +58,10 @@
 
   .select2-selection__rendered
     height: 100%
+    display: flex !important
+    align-items: center
+    padding-left: 20px !important
+    flex-wrap: wrap
 
   .select2-container--default
     .select2-results__option--highlighted[aria-selected]
@@ -62,8 +86,16 @@
 
 
 .with-checkbox
+  max-height: 221px !important
   .select2-results__option
       position: relative
+      display: flex
+      align-items: center
+      padding: 11px 20px
+      line-height: 100%
+      font-family: 'Montserrat'
+      font-size: 14px
+      color: #212121
       &::before
         content: ""
         display: block
@@ -77,12 +109,7 @@
         vertical-align: middle
 
   .select2-results__option
-    display: flex
-    align-items: center
-    padding: 11px 20px
-    font-family: 'Montserrat'
-    font-size: 14px
-    color: #212121
+
 
   .select2-results__option--highlighted[aria-selected]
             background-color: rgba(216, 230, 255, 0.62)
@@ -97,14 +124,15 @@
          content: ''
          display: block
          width: 20px
-         height: 20px 
+         height: 20px
          position: absolute
          background-image: url('./check.svg')
          background-size: cover
          left: 11px
          transform: translateX(50%)
 
-
+.select2-dropdown
+  border: 1px solid #CDD3DB
 
 
 // .select2-container--default
