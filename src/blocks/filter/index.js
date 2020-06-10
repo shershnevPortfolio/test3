@@ -8,6 +8,7 @@ export default () => {
   const configs = [
       {
         placeholder: 'Проект',
+        closeOnSelect : false,
         minimumResultsForSearch: -1,
         data: [
           {id: 'RsDigital', text: 'Rs Digital'},
@@ -18,6 +19,7 @@ export default () => {
      },
      {
        placeholder: 'Приоритет',
+       closeOnSelect : false,
        data: [
         {id: 'max', text: 'Максимум'},
         {id: 'high', text: 'Высокий'},
@@ -29,6 +31,7 @@ export default () => {
       },
           {
             placeholder: 'Статус',
+            closeOnSelect : false,
             data: [
               {id: 'in-progress', text: 'В работе'},
               {id: 'done', text: 'Сделана'},
@@ -44,9 +47,14 @@ export default () => {
 
   $selets.each(function(index) {
       const config = configs[index];
-      console.log(config)
       $(this).select2(config);
   })
+
+
+  $selets.on('select2:open', e => {
+    $('.select2-results__options').addClass('with-checkbox');
+  })
+  // select2-container
 
 
 
