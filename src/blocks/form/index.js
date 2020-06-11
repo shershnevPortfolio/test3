@@ -9,7 +9,7 @@ const getView = data => {
           ${data.name}
         </span>
         <span class='file-label__requires'>
-          ${data.type}
+          ${data.extention}, ${data.size}
         </span>
       </div>
     </div>
@@ -46,6 +46,24 @@ const toggleInputState = ($input) => {
 
 const reverse = () => $block.find('.form__file-component').toggleClass('form__file-component--reversed');
 
+const modifyData = (obj) => {
+  const typeData = obj.type.split('/');
+  const fileType = typeData[0];
+  let size = obj.size/1000000;
+  if(size < 1) {
+    size *= 1024;
+    size = `${size.toFixed(0)}Кб`
+  } else {
+    size = `${size.toFixed(1)}Мб`
+  }
+  console.log(size);
+  const fileExtention = typeData[1];
+  const fileName = obj.name.slice(0, obj.name.lastIndexOf(fileExtention) - 1);
+
+  return {...obj, name: fileName, extention: fileExtention, size}
+
+}
+
 export default () => {
   $input.on('change', function() {
   const files = $(this).prop('files');
@@ -53,7 +71,8 @@ export default () => {
     for(let key in files) {
         if(key !== 'length' && key !== 'item') {
           const fileData = files[key];
-          viewsList.push(getView(fileData))
+          const newData = modifyData(fileData);
+          viewsList.push(getView(newData));
         }
     }
 
