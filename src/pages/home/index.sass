@@ -26,6 +26,10 @@
   &:not(:last-child)
     margin-bottom: 36px
 
+.file-label--more
+  .file-label__button
+    background-color: transparent
+    border: 1px solid #CDD3DB
 
 
 .file-label__text
@@ -58,16 +62,27 @@
   height: 46px
   background: #ffffff
 
+.form__file-component
+  display: flex
+  flex-direction: column
+
+.form__file-component--reversed
+  flex-direction: column-reverse
+
 
 .form__item
   display: flex
   justify-content: space-between
+  .file-label
+    &:not(:last-child)
+      margin-bottom: 20px
+  .file-label__text
+    &:not(:last-child)
+      margin-bottom: 0
 
   @media screen and ( max-width: 571px  )
     flex-direction: column
-    .file-label
-      &:not(:last-child)
-        margin-bottom: 20px
+
 
 
 
