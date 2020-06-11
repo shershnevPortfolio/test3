@@ -29,7 +29,7 @@ const SERVER_PORT = 3000;
 /**
  * Webpack config variables
  */
-const PATH_BASE = '/';
+const PATH_BASE = '../';
 const PATH_ASSET = IS_PRODUCTION ? PATH_BASE : `http://${SERVER_HOST}:${SERVER_PORT}${PATH_BASE}`;
 const PATH_SRC = path.resolve(__dirname, 'src');
 const PATH_BUILD = path.resolve(__dirname, 'build');

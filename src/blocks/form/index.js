@@ -4,7 +4,7 @@ const getView = data => {
   return `
     <div class='file-label'>
       <div class='file-label__button file-label__button--colored'>
-      <img src="../../images/extention.svg" alt=""/></div><div class="file-label__text">
+      <img src="${require('../../images/extention.svg')}" alt=""/></div><div class="file-label__text">
       </div>
       <div class='file-label__text'>
         <span class='file-label__title'>
@@ -34,7 +34,7 @@ const toggleInputState = ($input) => {
     const uploadMore = `
       <label class="file-label file-label--more" for="upload-file">
       <div class="file-label__button">
-        <img src="../../images/plus.svg" alt=""/></div><div class="file-label__text">
+        <img src="${require('../../images/plus.svg')}" alt=""/></div><div class="file-label__text">
         <span class="file-label__title">Загрузить еще</span>
       </div>
       <input class="file-upload" type="file" id="upload-file" multiple="multiple" accept=".png, ,jpg, .mp4, .gif"/>
@@ -70,6 +70,7 @@ export default () => {
   $input.on('change', function() {
   const files = $(this).prop('files');
   const viewsList = [];
+  console.log('asdasdasdasd')
     for(let key in files) {
         if(key !== 'length' && key !== 'item') {
           const fileData = files[key];
