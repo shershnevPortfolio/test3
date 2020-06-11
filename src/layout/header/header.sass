@@ -1,7 +1,7 @@
 .header
   display: flex
   align-items: center
-  padding: 21px 80px
+  padding: 21px 0px
   justify-content: space-between
   background-color: #ffffff
   position: fixed
@@ -9,12 +9,16 @@
   z-index: 10
 
   @media screen and ( max-width: 1200px )
-    padding: 28px 20px
+    padding: 28px 0px
 
   .nav
     @media screen and ( max-width: 1200px )
       display: none
 
+  .container
+    display: flex
+    align-items: center
+    justify-content: space-between
 
 .header__dropdown
   display: none
@@ -32,7 +36,7 @@
     display: block
     position: absolute
     width: 30px
-    top: 40px
+    top: 30px
     right: 105px
 
   &::before
@@ -42,16 +46,18 @@
 
   &::after
     height: 20px
-    top: 35px
+    top: 25px
     right: 99px
     z-index: -1
     transform: rotate(45deg)
+    background: #fff
     border: 1px solid #CDD3DB
 
 .header__hover
-  padding-top: 40px
-  left: 80px
-  top: 57px
+  padding-top: 30px
+  left: 0px
+  transform: translateX(-50%)
+  top: 22px
   position: absolute
   z-index: 10
 
