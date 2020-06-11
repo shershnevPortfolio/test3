@@ -3,7 +3,9 @@ const $input = $block.find('.file-upload');
 const getView = data => {
   return `
     <div class='file-label'>
-      <div class='file-label__button'></div>
+      <div class='file-label__button file-label__button--colored'>
+      <img src="../../images/extention.svg" alt=""/></div><div class="file-label__text">
+      </div>
       <div class='file-label__text'>
         <span class='file-label__title'>
           ${data.name}
@@ -39,7 +41,6 @@ const toggleInputState = ($input) => {
     </label>
 
     `
-
     $input.parent('.file-label').html(uploadMore);
 }
 
@@ -52,13 +53,14 @@ const modifyData = (obj) => {
   let size = obj.size/1000000;
   if(size < 1) {
     size *= 1024;
-    size = `${size.toFixed(0)}Кб`
+    size = `${size.toFixed(0)} Кб`;
   } else {
-    size = `${size.toFixed(1)}Мб`
+    size = `${size.toFixed(0)} Мб`;
   }
   console.log(size);
-  const fileExtention = typeData[1];
-  const fileName = obj.name.slice(0, obj.name.lastIndexOf(fileExtention) - 1);
+  const fileExtention = typeData[1].toUpperCase();
+  console.log();
+  const fileName = obj.name.slice(0, obj.name.indexOf(fileExtention) - fileExtention.length);
 
   return {...obj, name: fileName, extention: fileExtention, size}
 
