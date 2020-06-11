@@ -494,16 +494,18 @@ block content
         section.section.review
           h2.section__header Оставьте отзыв о вашем использовании!
           .section__content
-            form(action="").from
+            form(action="").form
               textarea(name="" placeholder='Напишите ваш отзыв...' rows="5").form__textarea
               .form__item
-                label(for="upload-file").file-label
-                  .file-label__button
-                    img(src="../../images/staple.svg", alt="")
-                  .file-label__text
-                    span.file-label__title Прикрепить файлы
-                    span.file-label__requires Jpg, png, gif, mp4 не более 15 Мб
-                input( type="file" id='upload-file').file-upload
+                .form__file-component
+                  label(for="upload-file").file-label
+                    .file-label__button
+                      img(src="../../images/staple.svg", alt="")
+                    .file-label__text
+                      span.file-label__title Прикрепить файлы
+                      span.file-label__requires Jpg, png, gif, mp4 не более 15 Мб
+                  input( type="file" id='upload-file' multiple accept=".png, ,jpg, .mp4, .gif").file-upload
+                  .form__file-list
                 button.btn.btn--color Отправить отзыв
 
 

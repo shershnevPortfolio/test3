@@ -9,12 +9,14 @@ import './project';
 import './user';
 import './dropdown';
 import './star';
-import initTask from './task/index'
-import initFilter from './filter/index'
+import initTask from './task/index';
+import initFilter from './filter/index';
+import initForm from './form/index';
 
 export default () => {
   console.log('init blocks');
   initTask();
   initFilter();
+  initForm();
 
 };
