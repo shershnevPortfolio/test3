@@ -9,6 +9,12 @@
   cursor: pointer
   width: fit-content
 
+.file-label__cross
+  position: absolute
+  right: -15px
+  top: 0
+  transform: translateX(100%)
+
 .form__textarea
   background: #FFFFFF
   border: 1px solid #CDD3DB
@@ -36,6 +42,7 @@
 .file-label__text
   display: flex
   flex-direction: column
+  position: relative
 
 .file-label__requires
   font-family: 'Montserrat'
@@ -128,7 +135,6 @@
   //   list-style:
   div
     border-radius: 5px
-    overflow: hidden
     &:not(:last-child)
       margin-bottom: 36px
 

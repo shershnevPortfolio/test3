@@ -3,6 +3,7 @@ const $input = $block.find('.file-upload');
 const getView = data => {
   return `
     <div class='file-label'>
+
       <div class='file-label__button file-label__button--colored'>
       <img src="${require('../../images/extention.svg')}" alt=""/></div><div class="file-label__text">
       </div>
@@ -13,6 +14,9 @@ const getView = data => {
         <span class='file-label__requires'>
           ${data.extention}, ${data.size}
         </span>
+        <div class='file-label__cross'>
+          <img src="${require('../../images/cross.svg')}" alt=""/>
+        </div>
       </div>
     </div>
 
@@ -57,11 +61,8 @@ const modifyData = (obj) => {
   } else {
     size = `${size.toFixed(0)} Мб`;
   }
-  console.log(size);
   const fileExtention = typeData[1].toUpperCase();
-  console.log();
   const fileName = obj.name.slice(0, obj.name.indexOf(fileExtention) - fileExtention.length);
-
   return {...obj, name: fileName, extention: fileExtention, size}
 
 }
