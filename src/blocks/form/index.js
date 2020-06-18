@@ -1,18 +1,19 @@
 const $block = $('.form');
 const $input = $block.find('.file-upload');
 const getView = data => {
-  return `
-    <div class='file-label'>
+  const {key, name, size, extention} = data;
 
+  return `
+    <div class='file-label' data-key='${key}'>
       <div class='file-label__button file-label__button--colored'>
       <img src="${require('../../images/extention.svg')}" alt=""/></div><div class="file-label__text">
       </div>
       <div class='file-label__text'>
         <span class='file-label__title'>
-          ${data.name}
+          ${name}
         </span>
         <span class='file-label__requires'>
-          ${data.extention}, ${data.size}
+          ${extention}, ${size}
         </span>
         <div class='file-label__cross'>
           <img src="${require('../../images/cross.svg')}" alt=""/>
@@ -23,7 +24,7 @@ const getView = data => {
     `
 }
 
-const toggleInputState = ($input) => {
+const toggleInputState = $input => {
     const defaultState = `
       <label class="file-label" for="upload-file">
       <div class="file-label__button">
@@ -51,7 +52,7 @@ const toggleInputState = ($input) => {
 
 const reverse = () => $block.find('.form__file-component').toggleClass('form__file-component--reversed');
 
-const modifyData = (obj) => {
+const modifyData = (obj, key) => {
   const typeData = obj.type.split('/');
   const fileType = typeData[0];
   let size = obj.size/1000000;
@@ -63,25 +64,31 @@ const modifyData = (obj) => {
   }
   const fileExtention = typeData[1].toUpperCase();
   const fileName = obj.name.slice(0, obj.name.indexOf(fileExtention) - fileExtention.length);
-  return {...obj, name: fileName, extention: fileExtention, size}
+  return {...obj, name: fileName, extention: fileExtention, size, key}
 
 }
 
 export default () => {
   $input.on('change', function() {
+    console.log('changed');
   const files = $(this).prop('files');
+  console.log(files);
   const viewsList = [];
-  console.log('asdasdasdasd')
     for(let key in files) {
         if(key !== 'length' && key !== 'item') {
           const fileData = files[key];
-          const newData = modifyData(fileData);
+          const newData = modifyData(fileData, key);
           viewsList.push(getView(newData));
         }
     }
 
     reverse();
     $block.find('.form__file-list').append(viewsList);
+    $('.file-label__cross').on('click', function() {
+      const $fileLabel = $($(this).parents('.file-label')[0]).remove();
+
+    });
     toggleInputState($(this));
   })
+
 }
