@@ -2,6 +2,7 @@ class Loader {
   constructor($container, name) {
     this.progress = 0;
     this.$container = $container;
+    this.emptyCallBack;
   }
 
   _getView(name) {
@@ -38,7 +39,7 @@ class Loader {
     }, 500);
     setTimeout(() => {
       this._stop(file);
-      callback('hre');
+      callback();
       }, 2000 )
 
   }
@@ -46,7 +47,21 @@ class Loader {
   _stop(file) {
     clearInterval(this.interval);
     this.$container.html(this._getFileView(file));
+    const {emptyCallBack} = this;
+    this.$container.find('.file-label__cross').on('click', function() {
+      const $container = $(this).parents('.form__file-list');
+      $($(this).parents('.file-label')[0]).remove();
+      if($container.children().length === 0) {
+        emptyCallBack();
+      }
+
+    });
   }
+
+  setEmtyCallBack(callback) {
+    this.emptyCallBack = callback;
+  }
+
 }
 
 export default Loader;

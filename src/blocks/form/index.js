@@ -87,14 +87,14 @@ export default () => {
             switchInputState($(this), 'more');
             console.log(test)
           });
+          loader.setEmtyCallBack(() => {
+              switchInputState(null, 'main')
+          });
         }
     }
 
     reverse();
 
-    $('.file-label__cross').on('click', function() {
-      $($(this).parents('.file-label')[0]).remove();
-    });
   })
 
 }
