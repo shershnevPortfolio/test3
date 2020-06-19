@@ -1,4 +1,5 @@
 import Loader from './Loader'
+
 const $block = $('.form');
 const $input = $block.find('.file-upload');
 const getView = data => {
@@ -14,7 +15,7 @@ const {key, name, size, extention} = data;
 
 const switchInputState = ($input, state) => {
     const main = `
-      <label class="file-label" for="upload-file">
+      <label id='#file-loader' class="file-label" for="upload-file">
       <div class="file-label__button">
         <img src="../../images/staple.svg" alt=""/></div><div class="file-label__text">
         <span class="file-label__title">Прикрепить файлы</span>
@@ -25,7 +26,7 @@ const switchInputState = ($input, state) => {
     `
 
     const more = `
-      <label class="file-label file-label--more" for="upload-file">
+      <label id='#file-loader' class="file-label file-label--more" for="upload-file">
       <div class="file-label__button">
         <img src="${require('../../images/plus.svg')}" alt=""/></div><div class="file-label__text">
         <span class="file-label__title">Загрузить еще</span>
@@ -42,8 +43,9 @@ const switchInputState = ($input, state) => {
       empty,
       more
     }
-    console.log($input, state);
-    $input.parent('.file-label').html(states[state]);
+
+    console.log(states[state], state, $input);
+    $('#file-loader').html(states[state]);
 }
 
 

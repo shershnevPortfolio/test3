@@ -33,14 +33,14 @@ class Loader {
 
   load(file, callback) {
     this.interval = setInterval(() => {
-      setTimeout(() => {
-        this._stop(file);
-        callback('hre');
-        }, 2000 )
-
       this.progress++;
       this.$container.html(this._getView(file.name));
-    }, 500)
+    }, 500);
+    setTimeout(() => {
+      this._stop(file);
+      callback('hre');
+      }, 2000 )
+
   }
 
   _stop(file) {
