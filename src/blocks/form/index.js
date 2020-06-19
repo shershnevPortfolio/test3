@@ -12,8 +12,8 @@ const {key, name, size, extention} = data;
     `
 }
 
-const toggleInputState = $input => {
-    const defaultState = `
+const switchInputState = ($input, state) => {
+    const main = `
       <label class="file-label" for="upload-file">
       <div class="file-label__button">
         <img src="../../images/staple.svg" alt=""/></div><div class="file-label__text">
@@ -24,7 +24,7 @@ const toggleInputState = $input => {
     </label>
     `
 
-    const uploadMore = `
+    const more = `
       <label class="file-label file-label--more" for="upload-file">
       <div class="file-label__button">
         <img src="${require('../../images/plus.svg')}" alt=""/></div><div class="file-label__text">
@@ -34,7 +34,16 @@ const toggleInputState = $input => {
     </label>
 
     `
-    $input.parent('.file-label').html(uploadMore);
+    const empty = `
+
+    `
+    const states = {
+      main,
+      empty,
+      more
+    }
+    console.log($input, state);
+    $input.parent('.file-label').html(states[state]);
 }
 
 
@@ -56,11 +65,6 @@ const modifyData = (obj, key) => {
 
 }
 
-
-// const imitLoad = ($item, loaded) => {
-
-// }
-
 export default () => {
   $input.on('change', function() {
     console.log('changed');
@@ -74,27 +78,21 @@ export default () => {
           const fileData = files[key];
           const newData = modifyData(fileData, key);
           viewsList.push();
-          const selector = key => {
-            return `#file-label-${key}`
-          }
-          console.log(`#file-label-${key}`);
-          const getId = key => `#file-label-${key}`;
-          const id = getId(key)
-          console.log(key);
           $block.find('.form__file-list').append(getView(newData));
-          let loader = new Loader($(`#file-label-${}`));
-          loader.load(newData);
+          const loader = new Loader($(`#file-label-${key}`));
+          switchInputState($(this), 'empty')
+          loader.load(newData, (test) => {
+            switchInputState($(this), 'more');
+            console.log(test)
+          });
         }
     }
 
-
     reverse();
-
 
     $('.file-label__cross').on('click', function() {
       $($(this).parents('.file-label')[0]).remove();
     });
-    toggleInputState($(this));
   })
 
 }

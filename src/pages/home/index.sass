@@ -8,6 +8,10 @@
   align-items: center
   cursor: pointer
   width: fit-content
+  flex-wrap: wrap
+
+  .loading
+    margin-right: 10px
 
 .file-label__cross
   position: absolute
@@ -79,6 +83,7 @@
 .form__file-component
   display: flex
   flex-direction: column
+  margin-bottom: 0 !important 
 
 .form__file-component--reversed
   flex-direction: column-reverse
@@ -154,7 +159,7 @@
 
   ul, ol
     li
-      font-family: 'Montserrat'
+      font-family: 'Montserrat-Bold '
       font-style: normal
       font-weight: normal
       font-size: 17px
@@ -293,11 +298,23 @@
 .loading
   width: 169px
   height: 12px
+  margin-bottom: 0 !important
   border-radius: 0 !important
   background: #FFFFFF
+  display: flex
+  justify-content: space-between
   border: 1px solid #CDD3DB
 
 .loading__progress-bar
   background: #579AFF
-  border-radius: 0 !important 
+  border-radius: 0 !important
   height: 100%
+
+.loading__file-name
+  font-family: 'Montserrat'
+  font-style: normal
+  font-weight: 500
+  font-size: 15px
+  line-height: 15px
+  color: rgba(33, 33, 33, 0.2)
+

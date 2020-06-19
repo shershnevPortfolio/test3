@@ -1,13 +1,15 @@
 class Loader {
-  constructor($container) {
+  constructor($container, name) {
     this.progress = 0;
     this.$container = $container;
   }
 
-  _getView() {
+  _getView(name) {
    return `<div class='loading'>
       <div style='width: ${this.progress * 25}%' class='loading__progress-bar'></div>
-    </div>`
+    </div>
+    <div class='loading__file-name'>${name}</div>
+    `
   }
 
   _getFileView(data) {
@@ -29,18 +31,15 @@ class Loader {
   }
 
 
-  load(file) {
+  load(file, callback) {
     this.interval = setInterval(() => {
-      if(this.progress * 4  > 100) {
-
-        return;
-      }
       setTimeout(() => {
         this._stop(file);
+        callback('hre');
         }, 2000 )
 
       this.progress++;
-      this.$container.html(this._getView());
+      this.$container.html(this._getView(file.name));
     }, 500)
   }
 
