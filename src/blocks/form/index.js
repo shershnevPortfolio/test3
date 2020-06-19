@@ -1,24 +1,12 @@
+import Loader from './Loader'
 const $block = $('.form');
 const $input = $block.find('.file-upload');
 const getView = data => {
-  const {key, name, size, extention} = data;
+const {key, name, size, extention} = data;
 
   return `
-    <div class='file-label' data-key='${key}'>
-      <div class='file-label__button file-label__button--colored'>
-      <img src="${require('../../images/extention.svg')}" alt=""/></div><div class="file-label__text">
-      </div>
-      <div class='file-label__text'>
-        <span class='file-label__title'>
-          ${name}
-        </span>
-        <span class='file-label__requires'>
-          ${extention}, ${size}
-        </span>
-        <div class='file-label__cross'>
-          <img src="${require('../../images/cross.svg')}" alt=""/>
-        </div>
-      </div>
+    <div class='file-label' id='file-label-${key}' data-key='${key}'>
+
     </div>
 
     `
@@ -69,14 +57,9 @@ const modifyData = (obj, key) => {
 }
 
 
-const imitLoad = ($item, loaded) => {
-  const loadingView =   `<div class='loading'>
-    <div style='width: ${loaded * 25}%' class='loading__progress-bar'></div>
-  </div>`
-  if(loaded < 4) {
-    $item.html(loadingView);
-  }
-}
+// const imitLoad = ($item, loaded) => {
+
+// }
 
 export default () => {
   $input.on('change', function() {
@@ -85,25 +68,28 @@ export default () => {
   console.log(files);
   const viewsList = [];
   let i = 0;
+  const loadersList = [];
     for(let key in files) {
         if(key !== 'length' && key !== 'item') {
           const fileData = files[key];
           const newData = modifyData(fileData, key);
-          viewsList.push(getView(newData));
-          i++;
-          setInterval(() => {
-            i++;
-            imitLoad($block.find('.form__file-list'), i);
-          }, 500)
+          viewsList.push();
+          const selector = key => {
+            return `#file-label-${key}`
+          }
+          console.log(`#file-label-${key}`);
+          const getId = key => `#file-label-${key}`;
+          const id = getId(key)
+          console.log(key);
+          $block.find('.form__file-list').append(getView(newData));
+          let loader = new Loader($(`#file-label-${}`));
+          loader.load(newData);
         }
     }
 
+
     reverse();
-    setTimeout(() => {
-      $block.find('.form__file-list').append(viewsList);
-      clearInterval(loadedInterval);
-      $('.loading').remove();
-    }, 2000 )
+
 
     $('.file-label__cross').on('click', function() {
       $($(this).parents('.file-label')[0]).remove();
