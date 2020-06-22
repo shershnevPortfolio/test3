@@ -5,11 +5,11 @@ class Loader {
     this.emptyCallBack;
   }
 
-  _getView(name) {
+  _getView(name, ext) {
    return `<div class='loading'>
       <div style='width: ${this.progress * 25}%' class='loading__progress-bar'></div>
     </div>
-    <div class='loading__file-name'>${name}</div>
+    <div class='loading__file-name'>${name}.${ext.toLowerCase()}</div>
     `
   }
 
@@ -35,7 +35,7 @@ class Loader {
   load(file, callback) {
     this.interval = setInterval(() => {
       this.progress++;
-      this.$container.html(this._getView(file.name));
+      this.$container.html(this._getView(file.name, file.extention));
     }, 500);
     setTimeout(() => {
       this._stop(file);
